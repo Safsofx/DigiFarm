@@ -26,3 +26,11 @@ function connectPiNetwork() {
     console.log('Connecting to Pi Network...');
     // TODO: Add Pi Testnet authentication and transactions here
 }
+function connectPiNetwork() {
+    Pi.authenticate(["username", "payments"], function(auth) {
+        console.log("Pi User:", auth.user);
+        alert("Welcome, " + auth.user.username);
+    }, function(error) {
+        console.error("Authentication failed:", error);
+    });
+}
